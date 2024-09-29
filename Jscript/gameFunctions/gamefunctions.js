@@ -1,6 +1,7 @@
 
 let captionOfField = document.getElementById('playingField').value;
 let map1 = new Map();
+
 map1.set('player 1','empty');
 map1.set('player 2','empty');
 map1.set('computer','empty');
@@ -64,7 +65,8 @@ function makeRandomMove(){
 function playMove(playerIndex,move,playercount){
     switch(playercount){
         case 1: 
-                newText = playerIndex + ' played ' + move;
+                newText = 'You' + ' played ' + move;
+                appendField(newText);
                 map1.set(playerIndex,move);
                 makeRandomMove();
                 appendField("computer played "+ map1.get('computer'));
@@ -73,8 +75,9 @@ function playMove(playerIndex,move,playercount){
         case 2: 
                 if (map1.get(playerIndex) == 'empty'){
                     map1.set(playerIndex,move);
-                    newText = playerIndex + ' played ' + move;
-                    appendField(newText);
+                    //newText = playerIndex + ' played ' + move;
+                    //appendField(newText);
+                    appendField(playerIndex + " played a move!");
                     break;
                 } else{
                     appendField(playerIndex + ' already has selected a move!' + 
