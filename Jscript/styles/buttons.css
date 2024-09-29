@@ -1,6 +1,4 @@
 .home-buttons{
-    background-color: rgb(127, 197, 255);
-    color: black;
     border: none;
     height: 36px;
     width: 15%;
@@ -11,37 +9,58 @@
     text-align: center;
     display: block;
 }
-
-button:hover{
-    background-color: rgb(72, 42, 243);
-}
-
-.playingField{
-    border-color: black;
-    border-style: solid;
-    resize: none;
-    text-align: left;
-}
-
 button{
     margin: 2% auto ;
     display: inline-block;
-    background-color: rgb(127, 197, 255);
-    color: black;
+    background-color: rgb(219, 127, 255);
+    color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     margin-bottom: 8px;
     font-size: 16px;
+    font-family: 'goodtimes', sans-serif;
     text-align: center;
     height: 25px;
-    width: 75px;
+    width: 150px;
 }
+
+button:hover{
+    background-color: rgba(153, 42, 243, 0.445);
+}
+
+Body{
+    background-image: url("1111.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    font-family: 'goodtimes', sans-serif;
+}
+
+
+.playingField{
+    background-color: rgba(153, 22, 165, 0.315);
+    border-color: black;
+    border-style: solid;
+    resize: none;
+    text-align: left;
+    color: white;
+    font-family: 'goodtimes';
+    overflow: hidden;
+    resize: none;
+}
+@font-face {
+    font-family: 'goodtimes'; 
+    src: url('goodtimes.otf'); 
+  }
+  
+
 
 .header{
     text-align: center;
     margin: 1px auto ;
     margin-bottom: 5%;
+    color: white;
 }
 
 .center {
@@ -53,6 +72,8 @@ button{
 }
 
 .container {
+    margin-top: 200px;
     position: relative;
+    color: white;
 }
   
