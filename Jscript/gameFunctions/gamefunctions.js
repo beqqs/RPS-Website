@@ -1,6 +1,8 @@
-
 let captionOfField = document.getElementById('playingField').value;
 let map1 = new Map();
+let playerOneWinCount = 0;
+let playerTwoWinsCount = 0;
+
 
 map1.set('player 1','empty');
 map1.set('player 2','empty');
@@ -13,10 +15,22 @@ function appendField(newText){
     elem.value = old + '\r\n' + newText;
     scrollDown();
     }
+
 function scrollDown(){
     elem = document.getElementById('playingField');
     elem.scrollTop = elem.scrollHeight;
 }
+function increaseWinCount(playernumber){
+   appendField(playernumber)
+    if (playernumber == 1){
+        playerOneWinCount +=1;
+        document.getElementById("playerOneWinsCount").innerText = playerOneWinCount;
+    } else{
+        playerTwoWinsCount +=1;
+        document.getElementById("playerTwoWinsCount").innerText = playerTwoWinsCount;
+    }
+}
+
 //clears the text box so the file stays readable
 function clearBox(){
     document.getElementById('playingField').value = '';
@@ -28,27 +42,34 @@ function clearBox(){
 function calculateWinner(player1, player2){
     //DRAW:
     if (map1.get(player1) == map1.get(player2)){ ;
-        appendField("Both Players picked " + map1.get('player 1') + " Its a Draw, No Winner!"); 
+        appendField("Both Players picked " + map1.get('player 1') + " Its a Draw, No Winner!");
     } 
-    //Player 1 looses
+    //Player 1 loses
     else if (map1.get(player1) == 'Rock' & map1.get(player2)=='Paper'){
+        
         appendField(player2 + " wins!");
+        increaseWinCount(2);
     }
     else if (map1.get(player1) == 'Paper' & map1.get(player2)=='Scissors'){
         appendField(player2 + " wins!");
+        increaseWinCount(2);
     }
     else if (map1.get(player1) == 'Scissors' & map1.get(player2)=='Rock'){
         appendField(player2 + " wins!");
+        increaseWinCount(2);
         }
-    //Player 2 looses
+    //Player 1 Wins
     else if (map1.get(player1) == 'Rock' & map1.get(player2)=='Scissors'){
         appendField(player1 + " wins!");
+        increaseWinCount(1);
     }
     else if (map1.get(player1) == 'Paper' & map1.get(player2)=='Rock'){
         appendField(player1 + " wins!");
+        increaseWinCount(1);
     }
     else if (map1.get(player1) == 'Scissors' & map1.get(player2)=='Paper'){
         appendField(player1 + " wins!");
+        increaseWinCount(1);
     }
     map1.set('player 1','empty');
     map1.set('player 2','empty');

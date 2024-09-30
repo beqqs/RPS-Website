@@ -8,7 +8,9 @@
     </head>
     <body>
         <div class="container">
+
             <div class="center">
+
             <p> 
                 Welcome to the RPS Tournament!
             </p>
@@ -16,14 +18,21 @@
                 May the best player win!
             </p>
 
+            
 
             <textarea id="playingField" cols="50" rows="10" class="playingField" readonly="true"> 
-
              </textarea> 
+
 
             <p></p>
             Player 1
             <p></p>
+            
+            <div class="winCountContainer">
+                Wins:
+                <label class="winsCounter" id="playerOneWinsCount"> 0 </label> 
+            </div>
+
             <button class="rock-Button" onclick="playMove('player 1','Rock',1)">
                 Rock
             </button>
@@ -43,10 +52,13 @@
         </button>
 
     <p>
-        <button class="home-buttons test" onclick="goToPage('index')"> 
+        <button class="home-buttons test" onclick="goToPage('homepage')"> 
             HOME
         </button>
     </p>
+    </div>
+    <div class="winCountContainer">
+
     </div>
 </div>
        <script 

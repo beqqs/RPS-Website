@@ -12,6 +12,10 @@
             <p></p>
             Player 1
             <p></p>
+            <div class="winCountContainer">
+                Wins:
+                <label class="winsCounter" id="playerOneWinsCount" > 0 </label> 
+            </div>
             <button title="Rock" class="rock-Button" onclick = "playMove('player 1','Rock',2)">
                 Rock
             </button>
@@ -38,6 +42,10 @@
             <p></p>
             Player 2
             <p></p>
+            <div class="winCountContainer">
+                Wins:
+                <label class="winsCounter" id="playerTwoWinsCount" > 0 </label> 
+            </div>
             <button class="rock-Button" onclick="playMove('player 2','Rock',2)">
                 Rock
             </button>
@@ -55,13 +63,13 @@
             CLEAR
         </button>
         <p>
-            <button class="home-buttons test" onclick="goToPage('index')"> 
+            <button class="home-buttons test" onclick="goToPage('homepage')"> 
                 HOME
             </button>
         </p>
     </div>
 </div>
-        <script 
+        <script      
         src="gameFunctions/gamefunctions.js">
     </script> 
     </body>
